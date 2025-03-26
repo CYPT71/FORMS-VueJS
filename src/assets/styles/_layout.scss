@@ -1,0 +1,115 @@
+@use "sass:color";
+@use '@/assets/styles/variables' as *;
+
+body {
+  all: unset;
+  background-color: $color-bg-light;
+  color: $color-text-dark;
+  font-family: $font-base;
+  height: 100vh;
+}
+
+// ===========================
+// Layout principal
+// ===========================
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: $font-base;
+  background-color: $color-primary-dark;
+  color: $color-bg-light;
+
+  // -----------------------
+  // Header
+  // -----------------------
+  #header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $color-bg-light;
+    color: $color-text-dark;
+    padding: 1rem;
+    gap: 1rem;
+    border-bottom: 1px solid $color-border;
+  }
+
+  // -----------------------
+  // Main Content
+  // -----------------------
+  #main-content {
+    display: flex;
+    flex: 1;
+    background-color: $color-bg-light;
+  }
+
+  #left-column {
+    width: 33%;
+    padding: $left-column-padding;
+    background-color: $color-primary-light;
+    color: $color-bg-light;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  #right-column {
+    flex: 1;
+    padding: $right-column-padding;
+    background-color: $color-bg-light;
+    color: $color-footer;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .box,
+    .field,
+    .section {
+      border: 1px solid $color-border;
+      border-radius: $border-radius;
+      padding: 1rem;
+      background-color: $color-bg-muted;
+    }
+  }
+
+  // -----------------------
+  // Section générique
+  // -----------------------
+  .section {
+    text-align: center;
+    font-weight: bold;
+    background-color: $color-primary-dark;
+    color: $color-bg-light;
+
+    button {
+      cursor: pointer;
+      padding: $padding-base;
+      border-radius: $border-radius;
+      background-color: $color-accent;
+      color: $color-bg-light;
+      border: none;
+      font-weight: 600;
+
+      &:hover {
+        background-color: color.adjust($color-accent, $lightness: -10%);
+      }
+    }
+  }
+
+  // -----------------------
+  // Footer
+  // -----------------------
+  #footer {
+    background-color: $color-footer;
+    color: $color-text-light;
+    text-align: center;
+    padding: 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 400;
+  }
+}

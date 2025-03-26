@@ -1,0 +1,24 @@
+@use "sass:color";
+@use '@/assets/styles/variables' as *;
+
+.button {
+  padding: $padding-base;
+  background-color: $color-accent; // 🌸 correspond au bouton rose visible
+  color: $color-bg-light; // texte blanc pour lisibilité
+  border: none;
+  border-radius: $border-radius;
+  font-weight: bold;
+  font-family: $font-base;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: color.adjust($color-accent, $lightness: -10%);
+  }
+
+  &:disabled {
+    background-color: $color-text-ternary;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}

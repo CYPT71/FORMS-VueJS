@@ -1,0 +1,42 @@
+
+.profile-link__anchor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+
+  width: 2.5em;
+  height: 2.5em;
+
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  color: var(--text-primary);
+
+  &:hover {
+    background-color: var(--text-ternary);
+    color: white;
+  }
+}
+
+.profile-link__img {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--text-ternary);
+}
+
+.profile-link__text {
+  display: none; // on cache le texte ici
+}
+
+.profile-link__modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  padding: 1rem;
+}

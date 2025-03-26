@@ -1,0 +1,78 @@
+@use '@/assets/styles/variables' as *;
+
+.input-field {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    border: 1px solid $color-border; // Bordure extérieure plus douce
+    border-radius: $border-radius;
+    padding: 1em;
+
+    &[data-type='checkbox'] {
+      display: grid;
+      justify-content: center;
+      width: fit-content;
+    }
+  }
+
+  &__input {
+    border: 1px solid $color-border;
+    border-radius: $border-radius;
+    padding: 0.5em;
+    height: $input-height;
+    font-family: $font-base;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: $color-bg-light;
+    color: $color-text-dark;
+
+    &:focus-visible {
+      border-color: $color-accent;
+      outline: none;
+    }
+
+    &[type='checkbox'] {
+      height: 1.25em;
+      width: 1.25em;
+    }
+
+    &[type='submit'] {
+      background-color: $color-accent;
+      color: $color-bg-light;
+      border: none;
+      font-size: 0.75em;
+      font-weight: bold;
+      width: 10em;
+      cursor: pointer;
+      border-radius: $border-radius;
+
+      &:hover {
+        background-color: $color-accent-dark;
+      }
+    }
+
+    &[type='file'] {
+      display: none;
+    }
+  }
+
+  &__label {
+    display: inline-block;
+    font-size: 0.85em;
+    font-family: $font-base;
+    cursor: pointer;
+    color: $color-text-dark;
+
+    &[data-type='file'] {
+      display: grid;
+      align-content: center;
+      border-radius: $border-radius;
+      border: 1px solid $color-border;
+      padding: 0.5em;
+      background-color: $color-bg-light;
+      height: $input-height;
+    }
+  }
+
+}

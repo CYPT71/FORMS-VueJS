@@ -1,0 +1,16 @@
+.info-box__container {
+  white-space: nowrap;
+  background-color: var(--background-primary);
+  padding: 10px;
+  border: 1px solid var(--background-secondary);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  height: auto;
+  overflow: hidden;
+  font-size: 12px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.info-box__content {
+  border-radius: 5px;
+}
