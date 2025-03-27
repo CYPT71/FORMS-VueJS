@@ -12,7 +12,6 @@
 </template>
 
 <script setup lang="ts">
-import InputField from '@/components/InputField/index.vue'
 import type { QuestionInput } from '@/types';
 
 const props = defineProps<QuestionInput>()

@@ -19,10 +19,9 @@
 </template>
 
 <script setup lang="ts">
-const emit = defineEmits(['input', 'change'])
+import type {  InputFieldInner } from '@/types';
 
-import { computed } from 'vue'
-import type { InputFieldInner } from "@/types"
+const emit = defineEmits(['input', 'change'])
 
 const props = defineProps<InputFieldInner>()
 

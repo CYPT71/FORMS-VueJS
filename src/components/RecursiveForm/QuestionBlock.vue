@@ -25,8 +25,6 @@
 </template>
 
 <script setup lang="ts">
-import QuestionInput from './QuestionInput.vue'
-import QuestionBlock from './QuestionBlock.vue'
 import type {  QuestionBlock as QuestionBlockType, QuestionEmit } from '@/types';
 import { ref } from 'vue';
 

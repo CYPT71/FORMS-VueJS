@@ -9,8 +9,6 @@
 </template>
 
 <script setup lang="ts">
-import ModalOverlay from './ModalOverlay.vue'
-import ModalBody from './ModalBody.vue'
 import { onMounted, onUnmounted } from 'vue';
 import type { BaseModal } from "@/types"
 

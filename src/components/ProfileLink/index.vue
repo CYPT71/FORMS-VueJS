@@ -16,10 +16,6 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import ProfileAnchor from './ProfileAnchor.vue'
-import ProfileImage from './ProfileImage.vue'
-import ProfileText from './ProfileText.vue'
-import BaseModal from '@/components/BaseModal/index.vue'
 import type { Profile } from '@/types'
 import {user} from "@/mocks/user"
 

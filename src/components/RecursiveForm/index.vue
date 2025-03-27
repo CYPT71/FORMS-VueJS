@@ -13,7 +13,6 @@
 
 <script setup lang="ts">
 import { reactive } from 'vue'
-import QuestionBlock from './QuestionBlock.vue'
 import type { Question } from '@/types'
 import { mockQuestions } from '@/mocks/questions'
 
@@ -91,3 +90,4 @@ const submit = () => {
   }
 }
 </script>
+

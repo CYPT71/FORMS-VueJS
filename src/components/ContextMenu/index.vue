@@ -14,9 +14,7 @@
 
 <script setup lang="ts">
 import { ref, nextTick } from 'vue'
-import ContextButton from './ContextButton.vue'
-import ContextDropdown from './ContextDropdown.vue'
-import ContextList from './ContextList.vue'
+import type ContextButton from './ContextButton.vue'
 import type { ContextListProps } from '@/types';
 
 const buttonRef = ref<InstanceType<typeof ContextButton> | null>(null)

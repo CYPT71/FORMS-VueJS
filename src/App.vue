@@ -2,7 +2,7 @@
   <BaseLayout>
     <template #header>
       <h1>BaseLayout Header </h1>
-      <ProfileLink :imgLink="logo" />
+      <ProfileLink imgLink="@/assets/logo.svg" />
     </template>
     <template #left>
       <p>Colonne de gauche</p>
@@ -22,11 +22,6 @@
 </template>
 
 <script setup lang="ts">
-import BaseLayout from '@/components/BaseLayout/index.vue'
-import RecursiveForm from '@/components/RecursiveForm/index.vue'
-import ContextMenu from '@/components/ContextMenu/index.vue'
-import BaseModal from '@/components/BaseModal/index.vue'
-import ProfileLink from '@/components/ProfileLink/index.vue'
 import logo from '@/assets/logo.svg'
 
 import { ref } from 'vue'

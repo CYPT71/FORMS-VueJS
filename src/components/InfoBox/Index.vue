@@ -10,8 +10,6 @@
 
 <script setup lang="ts">
 import { ref, onMounted, watch } from 'vue'
-import InfoContainer from './InfoContainer.vue'
-import InfoContent from './InfoContent.vue'
 import type {InfoBox} from "@/types"
 
 const props = defineProps<InfoBox>()

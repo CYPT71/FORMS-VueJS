@@ -11,6 +11,7 @@ const handleFileChange = (event: Event) => {
   const input = event.target as HTMLInputElement
   fileSelected.value = !!input.files?.length
 }
+
 </script>
 
 <template>
