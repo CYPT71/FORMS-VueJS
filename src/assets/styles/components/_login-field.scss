@@ -1,0 +1,141 @@
+@use '@/assets/styles/variables' as *;
+
+.login__password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .login__input {
+    width: 100%;
+    padding: 0.75em 2.5em 0.75em 1em; // espace à droite pour le bouton
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #e6f5fd;
+  }
+
+  .login__toggle {
+    position: absolute;
+    right: 0.75em;
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #666;
+
+    &:hover {
+      color: #000;
+    }
+  }
+}
+
+
+#login {
+  background-color: #b77ea4; // Couleur de fond mauve
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;
+
+  &__box {
+    background-color: #ffffff;
+    padding: 2.5em;
+    border-radius: $border-radius;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    width: 340px;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 1.25em;
+    color: $color-text-dark;
+    margin-bottom: 0.5em;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='password'] {
+    border: 1px solid $color-border;
+    border-radius: $border-radius;
+    padding: 0.5em;
+    height: $input-height;
+    font-family: $font-base;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: $color-bg-light;
+    color: $color-text-dark;
+  }
+
+  &__password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    input {
+      padding-right: 2.5em;
+    }
+  }
+
+  &__toggle {
+    position: absolute;
+    right: 0.75em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+  }
+
+  &__forgot {
+    font-size: 0.85em;
+    color: $color-text-dark;
+    text-decoration: underline;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  button {
+    background-color: #271e5d; // violet foncé
+    color: #fff;
+    padding: 0.75em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1em;
+  }
+
+  &__signup {
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 0.5em;
+
+    a {
+      color: $color-accent;
+      text-decoration: underline;
+    }
+  }
+}
+
+#headerLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: #ffffff;
+
+  img {
+    max-height: 50px;
+  }
+}
+
+#loginFooter {
+  background-color: #2d1c5c; // violet très foncé du footer
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+}

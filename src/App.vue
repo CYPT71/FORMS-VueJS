@@ -1,7 +1,16 @@
 <template>
-  <BaseLayout project-title="BaseLayout Header">
+  <LoginForm @error="handleError" @is-connected="handleIsConnected" v-if="!connected">
+    <template #header>
+      <h1>BaseLayout Header</h1>
+    </template>
+    <template #footer>
+      <p>this is a footer</p>
+    </template>
+  </LoginForm>
+  <BaseLayout project-title="BaseLayout Header" v-else>
     <template #header>
       <ProfileLink :imgLink="logo" />
+      <button @click="handleLogout">Logout</button>
     </template>
     <template #left>
       <p>Colonne de gauche</p>
@@ -26,6 +35,19 @@ import logo from '@/assets/logo.svg'
 
 import { ref } from 'vue'
 const modalOpen = ref(false)
+const connected = ref<boolean>(false)
+
+const handleIsConnected = (isConnected: boolean) => {
+  connected.value = isConnected;
+}
+
+const handleLogout = () => {
+  connected.value = false
+}
+
+const handleError = (err: string) => {
+  alert(err);
+}
 </script>
 
 
