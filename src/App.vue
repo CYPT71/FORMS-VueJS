@@ -2,7 +2,7 @@
   <BaseLayout>
     <template #header>
       <h1>BaseLayout Header </h1>
-      <ProfileLink imgLink="@/assets/logo.svg" />
+      <ProfileLink :imgLink="logo" />
     </template>
     <template #left>
       <p>Colonne de gauche</p>
