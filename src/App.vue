@@ -1,7 +1,6 @@
 <template>
-  <BaseLayout>
+  <BaseLayout project-title="BaseLayout Header">
     <template #header>
-      <h1>BaseLayout Header </h1>
       <ProfileLink :imgLink="logo" />
     </template>
     <template #left>
@@ -22,6 +21,7 @@
 </template>
 
 <script setup lang="ts">
+// @ts-ignore
 import logo from '@/assets/logo.svg'
 
 import { ref } from 'vue'

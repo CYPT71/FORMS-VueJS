@@ -34,7 +34,12 @@ body {
     padding: 1rem;
     gap: 1rem;
     border-bottom: 1px solid $color-border;
-  }
+
+    #header-title {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }  
 
   // -----------------------
   // Main Content
@@ -46,7 +51,7 @@ body {
   }
 
   #left-column {
-    width: 33%;
+    width: 20%;
     padding: $left-column-padding;
     background-color: $color-primary-light;
     color: $color-bg-light;

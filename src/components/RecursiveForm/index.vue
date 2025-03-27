@@ -16,7 +16,7 @@ import { reactive } from 'vue'
 import type { Question } from '@/types'
 import { mockQuestions } from '@/mocks/questions'
 
-const questions = reactive<Question[]>(JSON.parse(JSON.stringify(mockQuestions)))
+const questions = reactive<Question[]>(mockQuestions)
 const errors = reactive<Record<string, string>>({})
 
 // 🔍 Trouve une question par ID dans l'arbre
@@ -52,26 +52,24 @@ const validateQuestion = (q: Question): boolean => {
   const isEmpty = (val?: string) =>
     !val || (typeof val === 'string' && val.trim() === '')
 
-  const hasValidChildren = (children?: Question[]) =>
-    children?.every(validateQuestion)
+  // 🔁 Toujours valider les enfants si présents
+  const childrenValid = q.children ? q.children.every(validateQuestion) : true
 
-  if (isEmpty(q.answer)) {
-    if (!q.children || q.children.length === 0 || !hasValidChildren(q.children)) {
-      errors[q.id] = 'Ce champ est requis.'
-      valid = false
-    } else {
-      delete errors[q.id]
-    }
+  if (isEmpty(q.answer) && !childrenValid) {
+    errors[q.id] = 'Ce champ est requis.'
+    valid = false
   } else {
     delete errors[q.id]
   }
 
-  return valid
+  return valid && childrenValid
 }
 
 // 🔁 Validation complète du formulaire
 const validateAll = (list: Question[]): boolean => {
   let valid = true
+  console.log(list);
+  
   for (const q of list) {
     if (!validateQuestion(q)) {
       valid = false
