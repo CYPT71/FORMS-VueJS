@@ -8,7 +8,7 @@
       <h1 class="login__title">Espace Fournisseur</h1>
 
       <input
-        input-type="email"
+        type="email"
         label="Adresse e-mail"
         v-model="email"
       />
@@ -40,42 +40,33 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { user } from '@/mocks/user';
+import { useUsers } from '@/consummables/Users'
 
 const email = ref('');
 const password = ref('');
 const passwordType = ref<'password' | 'text'>('password');
 
-function timingSafeEqual(a: string, b: string): boolean {
-  if (a.length !== b.length) {
-    let dummy = 0;
-    for (let i = 0; i < Math.max(a.length, b.length); i++) {
-      dummy |= (a.charCodeAt(i % a.length) ^ b.charCodeAt(i % b.length));
-    }
-    return false;
-  }
+const userStore = useUsers()
 
-  let result = 0;
-  for (let i = 0; i < a.length; i++) {
-    result |= a.charCodeAt(i) ^ b.charCodeAt(i);
-  }
-  return result === 0;
-}
+// Initialisation du store (useMock = true pour le fallback local)
+userStore.init({ useMock: true })
 
 const emit = defineEmits<{
   (e: 'isConnected', isConnected: boolean): void
   (e: 'error', message: string): void
 }>();
 
-const validateLogin = () => {
-  const emailMatch = timingSafeEqual(email.value, user.email);
-  const passwordMatch = timingSafeEqual(password.value, user.password);
-  const isConnected = emailMatch && passwordMatch;
+const validateLogin = async () => {
+  const success = await userStore.login({
+    email: email.value,
+    password: password.value,
+  });
 
-  emit('isConnected', isConnected);
-  if (!isConnected) {
-    emit('error', 'Invalid credentials');
+  emit('isConnected', success);
+
+  if (!success && userStore.error) {
+    emit('error', userStore.error);
   }
 };
-
 </script>
+

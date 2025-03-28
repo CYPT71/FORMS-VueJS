@@ -1,25 +1,27 @@
 <template>
   <div class="question-input__wrapper">
     <InputField
+      v-model="modelAnswer"
       :inputType="question.type ?? 'text'"
       :label="question.label"
-      :value="question.answer"
-      :fileID="question.id"
-      @input="handleInput"
+      :id="question.id"
     />
     <p v-if="error" class="question-input__error">{{ error }}</p>
   </div>
 </template>
 
 <script setup lang="ts">
-import type { QuestionInput } from '@/types';
+import { computed } from 'vue'
+import type { QuestionInput } from '@/types'
 
 const props = defineProps<QuestionInput>()
+const emit = defineEmits<{
+  (e: 'update:answer', value: string): void
+}>()
 
-const emit = defineEmits(['update:answer'])
-
-const handleInput = (event: Event) => {
-  const target = event.target as HTMLInputElement
-  emit('update:answer', target?.value ?? "")
-}
+// Bind prop to model with computed getter/setter
+const modelAnswer = computed({
+  get: () => props.question.answer,
+  set: (value) => emit('update:answer', value ?? "")
+})
 </script>

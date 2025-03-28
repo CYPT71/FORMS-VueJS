@@ -35,7 +35,7 @@ import logo from '@/assets/logo.svg'
 
 import { ref } from 'vue'
 const modalOpen = ref(false)
-const connected = ref<boolean>(false)
+const connected = ref<boolean>(true)
 
 const handleIsConnected = (isConnected: boolean) => {
   connected.value = isConnected;

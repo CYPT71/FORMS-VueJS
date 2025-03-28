@@ -22,7 +22,7 @@ export const mockQuestions: Question[] = [
         answer: '',
       },
       {
-        id: 'q1.2',
+        id: 'q1.3',
         label: 'Photo',
         type: 'file',
         answer: '',

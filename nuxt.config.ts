@@ -26,7 +26,9 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/scripts',
     '@nuxt/test-utils',
-    '@nuxt/ui'
+    '@nuxt/ui',
+    '@pinia/nuxt',
+    'nuxt-lazy-hydrate',
   ],
 
   compatibilityDate: '2025-03-27',

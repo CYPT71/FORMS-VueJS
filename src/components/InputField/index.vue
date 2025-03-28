@@ -16,7 +16,7 @@ const handleFileChange = (event: Event) => {
 
 <template>
   <BaseInput
-    :inputType="inputType"
+    :type="inputType"
     :placeholder="placeholder"
     :label="label"
     @change="handleFileChange"
